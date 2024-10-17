@@ -17,8 +17,8 @@ export const Intro = () => {
       끊임없이 노력하며 나아갑니다.
       <br />
       <p className="mt-6 text-[20px] text-gray-800">
-        조금 늦게 시작했지만, <br /> 
-        프론트엔드 개발자에 대한 꿈을 갖고 <br /> 
+        조금 늦게 시작했지만, <br />
+        프론트엔드 개발자에 대한 꿈을 갖고 <br />
         다시 달려가고 있습니다.
       </p>
     </>,
@@ -41,27 +41,28 @@ export const Intro = () => {
 
   return (
     <div>
-      <section id="intro" >
-        <div className="pl-14 mt-40">
-          <h1 className="text-[46px]">
-            <span
-              className={`block transition-all duration-700 ease-in-out ${
-                fadeOut
-                  ? "opacity-0 translate-y-4" // 현재 텍스트 사라짐
-                  : "opacity-100 translate-y-0" // 기본 상태
-              }`}
-              
-            >
-              {texts[textIndex]} {/* 현재 텍스트 */}
-            </span>
-            <span
-              className={`block transition-all duration-700 ease-in-out ${
-                !fadeOut && textIndex === 1
-                  ? "opacity-100 translate-y-0" // 새로운 텍스트 올라옴
-                  : "opacity-0 translate-y-4" // 사라지는 상태
-              }`}
-            ></span>
-          </h1>
+      <section id="intro">
+        <div className="pl-14 mt-52">
+          <div className="h-80 w-full overflow-hidden">
+            <h1 className="text-[46px]">
+              <span
+                className={`block transition-all duration-700 ease-in-out ${
+                  fadeOut
+                    ? "opacity-0 translate-y-4" // 현재 텍스트 사라짐
+                    : "opacity-100 translate-y-0" // 기본 상태
+                }`}
+              >
+                {texts[textIndex]} {/* 현재 텍스트 */}
+              </span>
+              <span
+                className={`block transition-all duration-700 ease-in-out ${
+                  !fadeOut && textIndex === 1
+                    ? "opacity-100 translate-y-0" // 새로운 텍스트 올라옴
+                    : "opacity-0 translate-y-4" // 사라지는 상태
+                }`}
+              ></span>
+            </h1>
+          </div>
         </div>
       </section>
     </div>
