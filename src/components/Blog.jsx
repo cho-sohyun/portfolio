@@ -86,7 +86,7 @@ const Blog = ({ setActiveSection }) => {
       transition={{ duration: 1.2 }} // 애니메이션 지속 시간
     >
       <motion.div
-        className="md:w-4/5 md:pl-8 mx-auto"
+        className="md:w-4/5 md:pl-8"
         initial={{ opacity: 0, x: -100 }} // 초기 상태
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 100 }}
