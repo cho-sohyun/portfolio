@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
+import image from "../images/증명사진2 복사본.png";
 
 export const Navigation = ({ activeSection, setActiveSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ export const Navigation = ({ activeSection, setActiveSection }) => {
         <div className="mt-12 mb-4 flex flex-col items-center">
           <div className="w-[150px] h-[150px] border rounded-full border-gray overflow-hidden">
             <img
-              src="/images/증명사진2 복사본.png"
+              src={image}
               alt="Profile"
               className="w-full h-full rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-110 hover:translate-y-1 "
             />

@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../index.css";
+import chalkak from "../images/chalkak-main.gif";
+import market from "../images/marketzero3.gif";
 
 const projectsData = [
   {
@@ -8,7 +10,7 @@ const projectsData = [
     title: "#찰칵 Chal-kak (팀 프로젝트)",
     description:
       "사용자 맞춤형 게시글 추천 패션 SNS입니다. 이 프로젝트는 옷으로 누구나 맞이했던 온갖 경험들에서 시작하여, 고민을 해결하기 위해 기획하게 되었습니다.",
-    image: "/images/chalkak-main.gif",
+    image: chalkak,
     github: "https://github.com/ZB-ChalKak",
     details: "상세보기",
   },
@@ -17,7 +19,7 @@ const projectsData = [
     title: "market zero (개인 프로젝트)",
     description:
       "개발자가 되면 웹 쇼핑몰을 꼭 한번 만들어보고 싶은 첫번째 바램으로 시작되었습니다. 사용자가 보기에 가장 UI가 깔끔하면서 가장 한눈에 보기 쉽고 이용하는 서비스 또한 기능도 충실 하다고 생각하여 마켓컬리를 래퍼런스로 구현했습니다.",
-    image: "/images/marketzero3.gif",
+    image: market,
     github: "https://github.com/cho-sohyun/market-frontend",
     details: "상세보기",
   },
