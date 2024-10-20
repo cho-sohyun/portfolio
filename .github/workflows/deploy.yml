@@ -2,8 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"] # main 브랜치에 푸시할 때 워크플로우 실행
+  workflow_dispatch: # 수동으로 실행할 수 있는 옵션
+
+# 권한 설정
+permissions:
+  contents: write # 레포지토리에 대한 쓰기 권한
+  pages: write # GitHub Pages에 대한 쓰기 권한
 
 jobs:
   deploy:
