@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigation } from "./Navigation";
 import { Intro } from "./Intro";
+import Skills from "./Skills";
 import About from "./About";
 
 export const Main = () => {
@@ -12,6 +13,7 @@ export const Main = () => {
         {/* 스크롤이 가능하도록 overflow-y-auto 추가 */}
         <Intro />
         <About />
+        <Skills />
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ export const Intro = () => {
       <br />
       끊임없이 노력하며 나아갑니다.
       <br />
-      <p className="mt-6 text-[20px] text-gray-800">
+      <p className="mt-6 text-[16px] text-gray-800">
         조금 늦게 시작했지만, <br />
         프론트엔드 개발자에 대한 꿈을 갖고 <br />
         다시 달려가고 있습니다.
@@ -34,7 +34,7 @@ export const Intro = () => {
         setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setFadeOut(false); // 페이드 인 시작
       }, 700); // 사라지는 시간
-    }, 4000); // 텍스트 전환 주기
+    }, 3000); // 텍스트 전환 주기
 
     return () => clearInterval(interval);
   }, []);
@@ -44,7 +44,7 @@ export const Intro = () => {
       <section id="intro">
         <div className="pl-14 mt-52">
           <div className="h-80 w-full overflow-hidden">
-            <h1 className="text-[46px]">
+            <h1 className="text-[42px]">
               <span
                 className={`block transition-all duration-700 ease-in-out ${
                   fadeOut
