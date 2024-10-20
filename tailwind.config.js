@@ -15,6 +15,12 @@ module.exports = {
           "sans-serif",
         ],
       },
+      fontWeight: {
+        normal: 400,
+        bold: 700,
+        extrabold: 800,
+        900: 900,
+      },
     },
   },
 };

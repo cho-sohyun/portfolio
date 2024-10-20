@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "../index.css";
 
-const About = () => {
+const About = ({ setActiveSection }) => {
   const itemRefs = useRef([]);
 
   useEffect(() => {
@@ -10,6 +10,7 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            setActiveSection("about");
             entry.target.classList.add("fade-in"); // 요소가 뷰포트에 들어오면, 해당 요소에 "fade-in" 클래스를 추가하여 CSS 애니메이션을 적용
             observer.unobserve(entry.target); // unobserve 메서드를 호출하여 해당 요소의 관찰을 중지, 애니메이션 한 번만 실행
           }
@@ -26,7 +27,7 @@ const About = () => {
     return () => {
       observer.disconnect(); // 컴포넌트가 언마운트될 때 호출되는 정리 함수
     };
-  }, []);
+  }, [setActiveSection]);
 
   const items = [
     {
@@ -94,7 +95,7 @@ const About = () => {
         >
           ABOUT ME
         </h3>
-        <p className="mt-4 font-extrabold text-xl italic">
+        <p className="mt-4 font-extrabold text-xl  custom-font">
           ‘Work-Life Balance’ 보다 몰입할 수 있는 일을 하는 삶을 추구합니다.
         </p>
         <p className="font-bold text-black mt-14">
@@ -131,9 +132,11 @@ const About = () => {
       ))}
 
       {/* 추가 메시지 */}
-      <blockquote className="md:w-4/5 mt-14 text-lg font-bold border-l-4 bg-[#f9bf3f] ml-6 pl-6 pt-6 pb-6 italic">
-        앞으로 더 가치있는 개발자가 되고싶습니다.
-      </blockquote>
+      <div className="md:w-4/5 mt-14 bg-[#f9bf3f] ml-0 md:ml-6">
+        <p className="text-sm font-bold pl-6 pt-6 pb-6 italic">
+          앞으로 더 가치있는 개발자가 되고싶습니다.
+        </p>
+      </div>
     </section>
   );
 };

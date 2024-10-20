@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../index.css";
 
-const Skills = () => {
+const Skills = ({ setActiveSection }) => {
   const itemRefs = useRef([]);
 
   useEffect(() => {
@@ -10,6 +10,7 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            setActiveSection("skills");
             entry.target.classList.add("fade-in"); // 요소가 뷰포트에 들어오면, 해당 요소에 "fade-in" 클래스를 추가하여 CSS 애니메이션을 적용
             observer.unobserve(entry.target); // unobserve 메서드를 호출하여 해당 요소의 관찰을 중지, 애니메이션 한 번만 실행
           }
@@ -26,7 +27,7 @@ const Skills = () => {
     return () => {
       observer.disconnect(); // 컴포넌트가 언마운트될 때 호출되는 정리 함수
     };
-  }, []);
+  }, [setActiveSection]);
 
   // 스킬 셋
   const skills = [
@@ -93,41 +94,40 @@ const Skills = () => {
   ];
 
   // 프로그래스 바
-  const renderProgressBar = (skill) => {
+  const renderProgressBar = (skill, index) => {
     return (
-      <motion.div
-        ref={(el) => (itemRefs.current[skills.indexOf(skill)] = el)}
-        className="mb-4 relative mr-4"
-      >
+      <motion.div ref={(el) => (itemRefs.current[index] = el)} className="mb-4">
         <p className="text-sm custom-font">{skill.name}</p>
-        <progress
-          className={`progress w-full ${
-            skill.name === "HTML5" || skill.name === "JavaScript"
-              ? "progress-primary"
-              : skill.name === "CSS3"
-              ? "progress-secondary"
-              : skill.name === "React"
-              ? "progress-info"
-              : skill.name === "TypeScript" || skill.name === "Bootstrap"
-              ? "progress-warning"
-              : skill.name === "Next.js"
-              ? "progress-accent"
-              : skill.name === "TailwindCSS"
-              ? "progress-success"
-              : skill.name === "Figma"
-              ? "progress-error"
-              : ""
-          }`}
-          value={skill.level}
-          max="100"
-        ></progress>
+        <div className="relative w-full">
+          <progress
+            className={`progress w-full ${
+              skill.name === "HTML5" || skill.name === "JavaScript"
+                ? "progress-primary"
+                : skill.name === "CSS3"
+                ? "progress-secondary"
+                : skill.name === "React"
+                ? "progress-info"
+                : skill.name === "TypeScript" || skill.name === "Bootstrap"
+                ? "progress-warning"
+                : skill.name === "Next.js"
+                ? "progress-accent"
+                : skill.name === "TailwindCSS"
+                ? "progress-success"
+                : skill.name === "Figma"
+                ? "progress-error"
+                : ""
+            }`}
+            value={skill.level}
+            max="100"
+          />
 
-        <span
-          className="custom-font absolute right-0 top-2 text-[10px] text-gray-600"
-          style={{ right: `${100 - skill.level}%` }}
-        >
-          {skill.level}%
-        </span>
+          <span
+            className="absolute right-0 bottom-6 text-[10px] font-bold text-gray-600"
+            style={{ right: `${100 - skill.level}%` }}
+          >
+            {skill.level}%
+          </span>
+        </div>
         <p className="text-xs font-normal text-gray-800 mt-1">
           {skill.description}
         </p>
@@ -157,7 +157,7 @@ const Skills = () => {
         >
           저는 지금 이런것이 가능합니다.
         </h3>
-        <p className="mt-4 font-extrabold text-xl italic">SKILLS</p>
+        <p className="mt-4 font-extrabold text-xl custom-font ">SKILLS</p>
         <p className="mt-12 text-gray-700 font-semibold text-[14px]">
           HTML과 JavaScript를 시작으로 언어 사용에 대한 감을 익혔습니다. 여러
           강의를 통해 웹 개발의 기초를 탄탄히 다진 후,
@@ -175,27 +175,27 @@ const Skills = () => {
       <div className="md:w-4/5 md:pl-8 flex flex-wrap mt-8">
         {/* 왼쪽 프로그래스 바 */}
         <motion.div
-          className="w-1/2 pr-4"
+          className="w-full sm:w-1/2 pr-4"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 1.2 }}
         >
-          {skills.slice(0, 5).map((skill) => (
-            <div key={skill.name}>{renderProgressBar(skill)}</div>
+          {skills.slice(0, 5).map((skill, index) => (
+            <div key={skill.name}>{renderProgressBar(skill, index)}</div>
           ))}
         </motion.div>
 
         {/* 오른쪽 프로그래스 바 */}
         <motion.div
-          className="w-1/2 pl-4"
+          className="w-full sm:w-1/2 pr-4"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}
           transition={{ duration: 1.5 }}
         >
-          {skills.slice(5).map((skill) => (
-            <div key={skill.name}>{renderProgressBar(skill)}</div>
+          {skills.slice(5).map((skill, index) => (
+            <div key={skill.name}>{renderProgressBar(skill, index)}</div>
           ))}
         </motion.div>
       </div>

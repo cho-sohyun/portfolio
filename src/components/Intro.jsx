@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-export const Intro = () => {
+export const Intro = ({ setActiveSection }) => {
   const texts = [
     <>
       안녕하세요!
@@ -26,6 +26,28 @@ export const Intro = () => {
 
   const [textIndex, setTextIndex] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
+  const introRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection("intro"); // 현재 섹션 이름을 설정
+          }
+        });
+      },
+      { threshold: 0.1 } // 10% 이상 보일 때 트리거
+    );
+
+    if (introRef.current) {
+      observer.observe(introRef.current); // Intro 섹션 관찰 시작
+    }
+
+    return () => {
+      observer.disconnect(); // 언마운트 시 정리
+    };
+  }, [setActiveSection]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,14 +59,18 @@ export const Intro = () => {
     }, 3000); // 텍스트 전환 주기
 
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
   return (
     <div>
-      <section id="intro">
-        <div className="pl-14 mt-52">
-          <div className="h-80 w-full overflow-hidden">
-            <h1 className="text-[42px]">
+      <section id="intro" ref={introRef}>
+        <div className="mt-52 px-4 md:px-14">
+          <div className="h-[400px] w-full overflow-hidden">
+            <h1
+              className={`text-[32px] md:text-[42px] ${
+                window.innerWidth < 768 ? "text-center" : "text-left"
+              }`}
+            >
               <span
                 className={`block transition-all duration-700 ease-in-out ${
                   fadeOut
