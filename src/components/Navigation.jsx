@@ -41,9 +41,8 @@ export const Navigation = ({ activeSection, setActiveSection }) => {
             {["intro", "about", "skills", "projects", "career", "blog"].map(
               (section) => (
                 <li className="mb-4" key={section}>
-                  <a
-                    href={`#${section}`}
-                    onClick={() => handleScrollToSection(section)}
+                  <button
+                    onClick={() => handleScrollToSection(section)} // 스크롤 이동 처리
                     className={`block text-xs font-semibold transition-colors duration-300 no-underline relative ${
                       activeSection === section
                         ? "text-blue-700"
@@ -60,7 +59,7 @@ export const Navigation = ({ activeSection, setActiveSection }) => {
                         activeSection === section ? "scale-x-100" : "scale-x-0"
                       }`}
                     ></span>
-                  </a>
+                  </button>
                 </li>
               )
             )}

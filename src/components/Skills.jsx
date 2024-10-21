@@ -128,7 +128,7 @@ const Skills = ({ setActiveSection }) => {
             {skill.level}%
           </span>
         </div>
-        <p className="text-xs font-normal text-gray-800 mt-1">
+        <p className="text-sm font-normal text-gray-800 mt-1 custom-font2">
           {skill.description}
         </p>
       </motion.div>
@@ -158,7 +158,7 @@ const Skills = ({ setActiveSection }) => {
           저는 지금 이런것이 가능합니다.
         </h3>
         <p className="mt-4 font-extrabold text-xl custom-font ">SKILLS</p>
-        <p className="mt-12 text-gray-700 font-semibold text-[14px]">
+        <p className="mt-12 text-gray-700 font-normal text-sm custom-font2">
           HTML과 JavaScript를 시작으로 언어 사용에 대한 감을 익혔습니다. 여러
           강의를 통해 웹 개발의 기초를 탄탄히 다진 후,
           <br />

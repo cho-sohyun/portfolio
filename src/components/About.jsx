@@ -98,11 +98,11 @@ const About = ({ setActiveSection }) => {
         <p className="mt-4 font-extrabold text-xl  custom-font">
           ‘Work-Life Balance’ 보다 몰입할 수 있는 일을 하는 삶을 추구합니다.
         </p>
-        <p className="font-bold text-black mt-14">
+        <p className="font-bold text-black mt-14 custom-font2">
           안녕하세요. 조금 늦은 나이에 신입 프론트엔드 개발자가 되고 싶은
           조소현입니다.
         </p>
-        <p className="mt-4 text-gray-700 font-semibold text-[14px]">
+        <p className="mt-4 text-gray-700 custom-font2">
           저는 원래 커머스 MD로서 컨텐츠 및 프로모션을 기획하며 쇼핑의 즐거움을
           입력했었습니다. <br />
           개발자와 협업하며 기획한 서비스를 구현하면서 직접적으로 보여지는게
@@ -127,7 +127,7 @@ const About = ({ setActiveSection }) => {
             <h4 className="font-semibold p-2 flex-1">{item.title}</h4>
           </div>
           <hr className="border-gray-200 my-2" />
-          <p className="text-sm font-normal">{item.content}</p>
+          <p className="text-sm custom-font2 font-normal">{item.content}</p>
         </motion.div>
       ))}
 

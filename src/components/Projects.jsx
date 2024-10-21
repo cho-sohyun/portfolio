@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../index.css";
-import chalkak from "../images/chalkak-main.gif";
+import chalkak from "../images/chalkak-main2.gif";
 import market from "../images/marketzero3.gif";
+import { Link } from "react-router-dom";
 
 const projectsData = [
   {
@@ -25,13 +26,13 @@ const projectsData = [
   },
 ];
 
-const ProjectsCard = ({ title, description, image, github, details }) => {
+const ProjectsCard = ({ title, description, image, github, id }) => {
   return (
     <div className="relative group w-full sm:w-1/2 lg:w-1/3 p-4">
       <img src={image} alt={title} className="w-full h-80 object-cover" />
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex flex-col justify-start p-4">
         <p className="text-white text-start p-6 custom-font text-lg">{title}</p>
-        <p className="text-white text-start p-5 font-normal text-sm">
+        <p className="text-white text-start p-5 font-normal text-sm custom-font2">
           {description}
         </p>
       </div>
@@ -44,12 +45,12 @@ const ProjectsCard = ({ title, description, image, github, details }) => {
         >
           <p className="text-xs font-bold">Github</p>
         </a>
-        <a
-          href={details}
+        <Link
+          to={`/project/${id}`}
           className="bg-white text-black py-1 px-3 rounded hover:opacity-80 ml-2"
         >
           <p className="text-xs font-bold">상세보기</p>
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -115,7 +116,7 @@ const Projects = ({ setActiveSection }) => {
             description={project.description}
             image={project.image}
             github={project.github}
-            details={project.details}
+            id={project.id}
           />
         ))}
       </div>
