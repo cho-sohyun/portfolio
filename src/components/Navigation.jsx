@@ -19,9 +19,9 @@ export const Navigation = ({ activeSection, setActiveSection }) => {
     <>
       {/* 사이드바 */}
       <div
-        className={`flex flex-col h-screen bg-gray-100 shadow-md transition-width duration-300 overflow-hidden ${
+        className={`flex flex-col h-full bg-gray-100 shadow-md transition-all duration-300 ${
           menuOpen ? "w-full" : "w-0"
-        } md:w-80 md:block`}
+        } md:w-80 md:block max-w-full overflow-hidden`}
       >
         <div className="mt-12 mb-4 flex flex-col items-center">
           <div className="w-[150px] h-[150px] border rounded-full border-gray overflow-hidden">
@@ -36,7 +36,7 @@ export const Navigation = ({ activeSection, setActiveSection }) => {
             Frontend 개발자
           </span>
         </div>
-        <nav className="flex-grow">
+        <nav className="flex-grow overflow-y-auto">
           <ul className="list-none flex flex-col items-center mt-12">
             {["intro", "about", "skills", "projects", "career", "blog"].map(
               (section) => (
@@ -68,12 +68,12 @@ export const Navigation = ({ activeSection, setActiveSection }) => {
       </div>
 
       {/* 모바일 네비게이션 버튼 */}
-      <div className="md:hidden">
+      <div className="md:hidden relative">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-gray-600"
+          className="text-gray-600 my-4"
         >
-          <div className="p-0">
+          <div className="text-3xl">
             {menuOpen ? <MdOutlineClose /> : <MdOutlineMenu />}
           </div>
         </button>
