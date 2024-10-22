@@ -14,7 +14,7 @@ export const Project1 = () => {
   return (
     <div className="flex flex-col items-center justify-start p-4 bg-white h-auto custom-font2">
       {/* 프로젝트 카드 */}
-      <div className="flex flex-col md:flex-row w-full max-w-5xl overflow-hidden">
+      <div className="flex flex-col md:flex-row w-full max-w-5xl">
         {/* 왼쪽 설명 영역 */}
         <div className="flex-1">
           <h1 className="mt-12 text-4xl mb-4 custom-font">#찰칵 Chal-kak</h1>
@@ -71,7 +71,7 @@ export const Project1 = () => {
           </div>
 
           <div className="mt-4 text-gray-600 text-sm">
-            <a href="/" className="underline">
+            <a href="/portfolio" className="underline">
               홈으로 돌아가기
             </a>
           </div>
@@ -108,9 +108,9 @@ export const Project1 = () => {
       </div>
 
       {/* 기능 구현 내용 */}
-      <div className="mt-20 max-w-5xl md:pl-2 flex flex-wrap justify-center">
+      <div className="mt-20 md:pl-2 flex flex-wrap justify-center">
         {/* 왼쪽 기능 구현 내용 */}
-        <div className="w-full sm:w-1/2 max-w-md pr-4 bg-gray-100 rounded-2xl p-4">
+        <div className="w-full max-w-md  bg-gray-100 rounded-2xl p-4 mb-4">
           <div className="mt-4 font-bold text-sm custom-font">메인페이지</div>
           <p className="font-bold text-sm mt-4">
             사용자의 위치 요청 후 날씨 및 기온 표시
@@ -175,7 +175,7 @@ export const Project1 = () => {
         </div>
 
         {/* 오른쪽 기능 구현 내용 */}
-        <div className="w-full sm:w-1/2 max-w-md bg-gray-100 rounded-2xl p-4 md:ml-4">
+        <div className="w-full max-w-md bg-gray-100 rounded-2xl p-4 md:ml-4 mb-4">
           <div className="mt-4 font-bold text-sm custom-font">트러블슈팅</div>
 
           <p className="font-bold text-sm mt-4">

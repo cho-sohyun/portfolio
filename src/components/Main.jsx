@@ -8,6 +8,7 @@ import Career from "./Career";
 import Blog from "./Blog";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Project1 } from "./Project1";
+import { Project2 } from "./Project2";
 
 export const Main = () => {
   const [activeSection, setActiveSection] = useState("intro");
@@ -45,8 +46,7 @@ export const Main = () => {
   const isProjectPage = location.pathname.startsWith("/project/");
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      {/*  overflow-hidden으로 설정하여 스크롤을 제어 */}
+    <div className="flex h-screen">
       {!isProjectPage && (
         <Navigation
           activeSection={activeSection}
@@ -54,7 +54,11 @@ export const Main = () => {
         />
       )}
 
-      <div className="flex flex-col w-full overflow-y-auto">
+      <div
+        className={`flex flex-col w-full ${
+          isProjectPage ? "" : "overflow-y-auto"
+        }`}
+      >
         {/* 프로젝트 페이지가 아닐 때만 섹션을 렌더링 */}
         {!isProjectPage ? (
           <>
@@ -80,7 +84,7 @@ export const Main = () => {
         ) : (
           <Routes>
             <Route path="/project/1" element={<Project1 />} />
-            {/* 다른 프로젝트에 대한 라우트 추가 가능 */}
+            <Route path="/project/2" element={<Project2 />} />
           </Routes>
         )}
       </div>
