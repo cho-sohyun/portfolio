@@ -71,7 +71,7 @@ export const Project2 = () => {
               <FaPencilAlt className="mr-1" /> 회고록 바로가기
             </a>
             <a
-              href="https://velog.io/@whthgus77/JSON-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A1%9C-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+              href="https://marketzero-frontend.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-gray-700 hover:text-blue-500"
