@@ -57,7 +57,6 @@ export const Intro = ({ setActiveSection }) => {
         setFadeOut(false); // 페이드 인 시작
       }, 500); // 사라지는 시간
     }, 3000); // 텍스트 전환 주기
-    console.log(interval);
 
     return () => clearInterval(interval);
   }, [texts.length]);
