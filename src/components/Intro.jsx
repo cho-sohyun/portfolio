@@ -55,7 +55,7 @@ export const Intro = ({ setActiveSection }) => {
       setTimeout(() => {
         setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setFadeOut(false); // 페이드 인 시작
-      }, 700); // 사라지는 시간
+      }, 500); // 사라지는 시간
     }, 3000); // 텍스트 전환 주기
 
     return () => clearInterval(interval);
