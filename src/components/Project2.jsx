@@ -36,14 +36,6 @@ export const Project2 = () => {
             <br />
             마켓컬리를 래퍼런스로 구현했습니다.
           </p>
-          <p className="mt-8 font-xl font-semibold">해결방법</p>
-          <p className="mt-2 text-sm font-medium">
-            1. 현재 위치의 날씨, 나의 체형, 관심있는 스타일을 태그화 <br />
-            2. 활성화 된 태그를 기준으로 과거의 나 혹은 남이 작성한 게시글을
-            추천 <br />
-            3. 내가 관심 있는 사람들을 팔로우 하여 모아볼 수 있고, 좋아요 기능과
-            댓글 기능 등 SNS기능 활용
-          </p>
 
           <p className="mt-4 text-base">
             <strong>프로젝트 기간 :</strong> 2023년 07월 - 2023년 08월
